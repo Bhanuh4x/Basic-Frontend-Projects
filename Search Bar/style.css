@@ -3,25 +3,44 @@
     padding: 0;
 }
 body{
-   background-color: #9AB3F5;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+}
+.supercont{
+   
+position: relative;    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.child{
+   position: absolute;
+   top: 230px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+    
 }
 .container{
     
   display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
     width: 900px;
     height: 60px;
     border-radius: 50px;
     background: white;
     box-shadow: 9px 8px 30px;
-    
+   
 }
 
 .dropdown{
     display: flex;
+    flex-direction: ;
     align-items: center;
     font-size: 22px;
     gap: 50px;
@@ -29,6 +48,7 @@ body{
     height: 60px;
     border-radius: 50px;
     background:purple;
+    position: relative;
    
 }
 .dd{
@@ -37,21 +57,40 @@ body{
     font-size: x-large;
     margin-left: 35px;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .sbox{
+   border:0;
     padding-left: 12px;
     width: 600px;
     height: 58px;
     font-size: x-large;
     font-style: italic;
-    border: 0px;
+    
     outline: 0px;
 
     
 }
-
+.listitem{
+    position: absolute;
+    top: 70px;
+    width: 250px;
+    
+    visibility: hidden;
+    opacity: 0;
+   transition: all;
+   transition-duration: 0.6s;
+   transition-timing-function: linear;
+   
+}
+#scicon{
+    transition: all;
+    transition-duration: 0.8;
+    transition-timing-function: linear;
+}
 .search{
     font-size: 20px;
+    
 }
 .search input::placeholder{
     font-size: 20px;
@@ -61,47 +100,134 @@ body{
 
 ul{
     
-    position: relative;
+  
    list-style-type: none;
-   background: white;
+   background: rgb(255, 255, 255);
   
    
-   top: 220px;
-   right: 280px;
+   
    box-shadow: 9px 8px 30px;
   border-radius: 30px;
 }
 ul li{
-   
+   font-size: 20px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
     width: 230px;
-    height: 40px;
+    height: 35px;
     padding-top: 20px;
     padding-left: 20px;
+    
    
 }
+
 .dropdown:hover{
     background: rgb(99, 5, 99);
     
 }
 ul li:hover{
     color: purple;
-}
-
-.listitem{
-    display: none;
+    font-weight: 600;
 }
 .dropdown:hover .listitem{
-    display: block;
+   visibility: visible;
+  opacity: 1;
+    
 }
+
+
 .dropdown:hover #arrow{
     rotate: 180deg;
 }
+#scicon:hover{
+    transform: scale(1.3);
+    color: purple;
+}
+
 @media(max-width:1000px){
-    .container {
+.container {
         width: 500px;
     }
+.listitem
+   {
+    width: 200px;
+    
+   }
+   ul{
+    height: 190px;
+   }
+ul li{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     text-align: left;
+     width: 230px;
+     height: 5px;
+     padding-top: 20px;
+     padding-left: 15px;
+     
+     
+    
+ }
+
     .sbox{
+        width: 250px;
+        
+        
+    }
+    .dropdown{
         width: 200px;
+        gap: 8px;
+        
+    }
+    .dd{
+        letter-spacing: 2px;
+    font-size: 22px;
+    margin-left: 35px;
+    color: white;
+    }
+    .search input::placeholder{
+        font-size: 18px;
+        font-weight:550;
+        color: purple;
+    }
+}
+@media (max-width:545px){
+    .container{
+       
+        width: 280px;
+        height: 50px;
+    }
+    .sbox{
+       
+        height: 50px;
+        width: 130px;
+      
+    }
+    .dropdown{
+        width: 100px;
+        height: 50px;
+        gap:2px;
+    }
+    .dd{
+        letter-spacing: 1px;
+    font-size: 14px;
+    margin-left: 5px;
+    color: white;
+    }
+    #arrow{
+        font-size: 13px;
+        margin-right: 5px;
+    }
+    .search input::placeholder{
+        font-size: 14px;
+        font-weight:550;
+        color: purple;
+       
+    }
+    i{
+        font-size: 16px;
+    }
+    .listitem{
+        top: 57px;
     }
 }
